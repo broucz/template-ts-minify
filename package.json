@@ -1,0 +1,20 @@
+{
+  "name": "template-ts-minify",
+  "version": "0.1.0",
+  "license": "MIT",
+  "scripts": {
+    "type-check": "tsc --noEmit",
+    "type-check:watch": "npm run type-check -- --watch",
+    "build": "npm run build:types && npm run build:js",
+    "build:types": "tsc --emitDeclarationOnly",
+    "build:js": "babel src --out-dir lib --extensions .ts"
+  },
+  "devDependencies": {
+    "@babel/cli": "7.6.0",
+    "@babel/core": "7.6.0",
+    "@babel/plugin-transform-modules-commonjs": "7.6.0",
+    "@babel/preset-typescript": "7.6.0",
+    "babel-preset-minify": "0.5.1",
+    "typescript": "3.6.2"
+  }
+}
